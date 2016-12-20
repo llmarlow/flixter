@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'static_pages#index'
-
+  namespace :instructor do
+    resources :courses, only: [:new, :create, :show]
+  end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
